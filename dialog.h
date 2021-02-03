@@ -2,6 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QMouseEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -17,5 +18,9 @@ public:
 
 private:
     Ui::Dialog *ui;
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_mouse_x;
+    int m_mouse_y;
 };
 #endif // DIALOG_H
