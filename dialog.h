@@ -16,10 +16,13 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 private:
     Ui::Dialog *ui;
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
     int m_mouse_x;
     int m_mouse_y;
 };
